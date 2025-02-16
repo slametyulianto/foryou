@@ -1,0 +1,34 @@
+<!DOCTYPE html> 
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown & Fireworks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="countdown">10</div>
+    <div id="message">Happy <br> Valentine Day <br>💖💖💖<br> Yunisa Hani Latifah</div>
+    <div id="image-container">
+        <img src="assets/gambar.jpg" id="newYearImage" alt="Selamat Tahun Baru">
+    </div>
+    <button id="playMusic">🎵 Putar Musik</button>
+    
+    <audio id="bgMusic" src="assets/Hanni.mp3" loop></audio>
+
+    <script src="fireworks.js"></script>
+    <script>
+        document.getElementById('playMusic').addEventListener('click', function() {
+            const music = document.getElementById('bgMusic');
+            if (music.paused) {
+                music.play();
+                this.textContent = '🔇 Matikan Musik';
+            } else {
+                music.pause();
+                this.textContent = '🎵 Putar Musik';
+            }
+        });
+    </script>
+</body>
+</html>
